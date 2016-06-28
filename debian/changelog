@@ -1,3 +1,9 @@
+minit (20160627-1~xenial1) xenial; urgency=low
+
+  * Build for xenial
+
+ -- Charles Lindsay <chaz@chazomatic.us>  Mon, 27 Jun 2016 19:11:32 -0700
+
 minit (20140612-1~trusty1) trusty; urgency=low
 
   * Print certain exec() errors
