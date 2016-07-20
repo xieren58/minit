@@ -49,7 +49,7 @@ static void wait_for_child(pid_t child_pid) {
         pid_t pid;
         ((pid = wait(NULL)) != -1 || errno != ECHILD) && pid != child_pid;
     )
-        continue;
+        ;
 }
 
 static void wait_for_termination(void) {
@@ -63,7 +63,7 @@ static void wait_for_termination(void) {
     for(int signal; (signal = sigwaitinfo(&receive_set, NULL)) != SIGTERM
             && signal != SIGINT; ) {
         while(waitpid(-1, NULL, WNOHANG) > 0)
-            continue;
+            ;
     }
 }
 
@@ -113,7 +113,7 @@ int main(int argc, char *argv[]) {
     if(getpid() == 1)
         kill(-1, SIGTERM);
     while(wait(NULL) != -1 || errno != ECHILD)
-        continue;
+        ;
 
     return 0;
 }
